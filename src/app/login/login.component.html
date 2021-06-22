@@ -1,0 +1,30 @@
+<form [formGroup]="loginForm">
+<div class="row">
+  <div class="col"><h1>כניסה למערכת</h1></div>
+</div>
+<div class="row">
+  <div class="col">
+    <mat-form-field>
+      <mat-label>אימייל</mat-label>
+      <input matInput formControlName="email" tabindex="0" required autocomplete="off">
+      <mat-error *ngIf="loginForm.get('email')!.invalid">
+        {{validationService.getErrorMsg(loginForm.get('email'))}}</mat-error>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <mat-form-field>
+      <mat-label>סיסמה</mat-label>
+      <input matInput formControlName="password" tabindex="0" required autocomplete="off">
+      <mat-error *ngIf="loginForm.get('password')!.invalid">
+        {{validationService.getErrorMsg(loginForm.get('password'))}}</mat-error>
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <button (click)="login()" type="button" class="btn btn-primary">התחבר</button>
+  </div>
+</div>
+</form>

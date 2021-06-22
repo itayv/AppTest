@@ -1,0 +1,3 @@
+<mat-grid-list cols="7" rowHeight="2:1">
+  <mat-grid-tile style="cursor: pointer;"  *ngFor="let item of jokesList" (click)="jokeOnClick(item)">{{item.id}}_{{item.type}}</mat-grid-tile>
+</mat-grid-list>
